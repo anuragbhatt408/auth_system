@@ -18,9 +18,6 @@ export class UserController {
 
     @Post('/login')
     getUser(@Body() loginDto: LoginDto) {
-        // const data = {
-        //     name, password
-        // }
         console.log('name and password in http service', loginDto);
         return this.natsClient.send({ cmd: 'getUser' }, loginDto);
     }
